@@ -1,5 +1,6 @@
 /** @format */
 
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,9 +10,15 @@ import React from "react";
 // }
 
 // done in types file
-const Header = ({ children }) => {
+const Header = ({
+	children,
+	className,
+}: {
+	children: HeaderProps;
+	className: HeaderProps;
+}) => {
 	return (
-		<div className='header'>
+		<div className={cn("header", className)}>
 			<Link href={"/"} className='md:flex-1'>
 				<Image
 					alt='Logo with name'
